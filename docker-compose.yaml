@@ -7,9 +7,6 @@ services:
     ports:
       - "5672:5672" # RabbitMQ server
       - "15672:15672" # Management console
-#    environment:
-#      RABBITMQ_DEFAULT_USER: user
-#      RABBITMQ_DEFAULT_PASS: password
     networks:
       - app-network
     profiles:
@@ -18,7 +15,6 @@ services:
       - test
   db:
     image: postgres
-#    container_name: postgres
     restart: always
     user: postgres
     environment:
@@ -128,12 +124,7 @@ services:
       - "8080:8080"
       - "8001:8001"
     volumes:
-      #      - /home/jboss/application
-      #      - /opt/jboss/.m2/repository/com/company/business-application-kjar
-      #
-      #      - /home/bogdan/thesis/01-tutorial-first-business-application/business-application-kjar:/home/jboss/application
-      #       - /home/bogdan/.m2/repository/com/thesis/kjar-listener-maven:/opt/jboss/.m2/repository/com/thesis/kjar-listener-maven
-      - /home/bogdan/.m2/repository/org/tests/processes/jbpm-processeventlistener:/opt/jboss/.m2/repository/org/tests/processes/jbpm-processeventlistener
+     - /home/bogdan/.m2/repository/org/tests/processes/jbpm-processeventlistener:/opt/jboss/.m2/repository/org/tests/processes/jbpm-processeventlistener
     networks:
       - app-network
     profiles:
