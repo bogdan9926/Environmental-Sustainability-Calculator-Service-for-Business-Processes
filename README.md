@@ -51,8 +51,15 @@ The project is part of a thesis that explores the integration of sustainability 
  - For uploading/editing annotations and fuel emission factors, use the buttons present in the dashboard. Modals will pop up for either uploading a file or writing the json.
  ![Annotations upload](images/ss-upload-annotations.png)
  ![Annotations edit](images/ss-edit-annotations.png)
- - For integrating Camunda, you can use a locally running Camunda Modeler to build the BPMN model. For the system to monitor the emissions correctly, make sure to add start and end event listeners on each activity, start event listener on the start event, and end event listener on the end event. Each service task should also have an implementation. When done with setting up the model, you can deploy it on http://localhost:8080/engine-rest, along with any forms, and then run it from the modeler. Any user task can be filled at http://localhost:8080/camunda/app/tasklist/default.
- - For JBPM, the docker compose script uploads a KJAR on the JBPM server. The KJAR contains the BPMN diagram and the linked forms. In order to  TODO cand testez JBPM
+ - For integrating Camunda, you can use a locally running Camunda Modeler to build the BPMN model. When done with setting up the model, you can deploy it on http://localhost:8080/engine-rest, along with any forms, and then run it from the modeler. Any user task can be filled at http://localhost:8080/camunda/app/tasklist/default.
+ - For JBPM, the docker compose script uploads a KJAR on the JBPM server. The KJAR contains the BPMN diagram and the linked forms. After the containers are running, use Swagger located at http://localhost:8080/kie-server/docs to create the container. use the following payload: {
+   "container-id" : $container-name,
+   "release-id" : {
+   "group-id" : "org.tests.processes",
+   "artifact-id" : "jbpm-processeventlistener",
+   "version" : "0.1.0-SNAPSHOT"
+   }
+   }. Then you can either create a process instance through the jbpm server console at http://localhost:8080/business-central (wbadmin:wbadmin) or through swagger, using your process id. 
  - Run your process instance from the engine. After the first task has been executed, new buttons for the current process and the running process instance will appear, along with the process diagram. The dashboard should look like this:
  ![Frontend](images/ss-frontend.png)
  - Select the desired process instance and see each executed activity's Co2 emissions. The emissions per activity appear after the activity has been executed end the activity end event fired. The emissions for user activities are shown after the form was claimed, filled and submitted. After the process ended, the total co2 amount is shown.
