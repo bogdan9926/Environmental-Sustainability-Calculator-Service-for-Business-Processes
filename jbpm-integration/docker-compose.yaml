@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  springboot-app:
+    image: my-spring-boot-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    networks:
+      - app-network
+
+  jbpm-server:
+    image: jboss/jbpm-server-full:latest
+    environment:
+      - JBPM_HT_CALLBACK=jaas
+      - JBPM_LOOP_LEVEL_DISABLED=true
+    ports:
+      - "8080:8080"
+      - "8001:8001"
+    volumes:
+#      - /home/jboss/application
+#      - /opt/jboss/.m2/repository/com/company/business-application-kjar
+#
+#      - /home/bogdan/thesis/01-tutorial-first-business-application/business-application-kjar:/home/jboss/application
+#       - /home/bogdan/.m2/repository/com/thesis/kjar-listener-maven:/opt/jboss/.m2/repository/com/thesis/kjar-listener-maven
+       - /home/bogdan/.m2/repository/org/tests/processes/jbpm-processeventlistener:/opt/jboss/.m2/repository/org/tests/processes/jbpm-processeventlistener
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

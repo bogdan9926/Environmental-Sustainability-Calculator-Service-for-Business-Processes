@@ -1,0 +1,13 @@
+.error-log-window {
+    display: contents;
+    color: red;
+}
+
+.error-log-window h2 {
+    margin-top: 0;
+}
+
+.error-log-window ul {
+    list-style-type: none;
+    padding-left: 0;
+}

@@ -1,0 +1,158 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672" # RabbitMQ server
+      - "15672:15672" # Management console
+#    environment:
+#      RABBITMQ_DEFAULT_USER: user
+#      RABBITMQ_DEFAULT_PASS: password
+    networks:
+      - app-network
+    profiles:
+      - camunda
+      - jbpm
+      - test
+  db:
+    image: postgres
+#    container_name: postgres
+    restart: always
+    user: postgres
+    environment:
+      - "POSTGRES_PASSWORD=postgres"
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx3072m"
+      - "POSTGRES_DB=postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+    profiles:
+      - camunda
+      - jbpm
+      - test
+        
+  flyway:
+    image: flyway/flyway
+    depends_on:
+      - db
+    volumes:
+      - ./sql:/flyway/sql
+    environment:
+      FLYWAY_URL: jdbc:postgresql://db/postgres
+      FLYWAY_USER: postgres
+      FLYWAY_PASSWORD: postgres
+    command: migrate
+    networks:
+      - app-network
+    profiles:
+      - camunda
+      - jbpm
+      - test
+
+  jbpm-integration:
+    image: jbpm-integration
+    restart: on-failure
+    build:
+      context: jbpm-integration
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    networks:
+      - app-network
+    profiles:
+      - jbpm
+    depends_on:
+      - rabbitmq
+      - jbpm-server
+
+
+  camunda-integration:
+    image: camunda-integration
+    build:
+      context: camunda-integration
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - app-network
+    profiles:
+      - camunda
+    volumes:
+      - shared-volume:/shared
+    depends_on:
+      - rabbitmq
+
+  camunda-engine:
+    image: camunda-engine
+    build:
+      context: camunda-engine/my-project
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    profiles:
+      - camunda
+    volumes:
+      - shared-volume:/shared
+
+  main-app:
+    image: main-app
+    build:
+      context: main-app
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+    depends_on:
+      - db
+      - rabbitmq
+    profiles:
+      - camunda
+      - jbpm
+    volumes:
+      - shared-volume:/shared
+
+  jbpm-server:
+    image: jboss/jbpm-server-full:latest
+    environment:
+      - JBPM_HT_CALLBACK=jaas
+      - JBPM_LOOP_LEVEL_DISABLED=true
+    ports:
+      - "8080:8080"
+      - "8001:8001"
+    volumes:
+      #      - /home/jboss/application
+      #      - /opt/jboss/.m2/repository/com/company/business-application-kjar
+      #
+      #      - /home/bogdan/thesis/01-tutorial-first-business-application/business-application-kjar:/home/jboss/application
+      #       - /home/bogdan/.m2/repository/com/thesis/kjar-listener-maven:/opt/jboss/.m2/repository/com/thesis/kjar-listener-maven
+      - /home/bogdan/.m2/repository/org/tests/processes/jbpm-processeventlistener:/opt/jboss/.m2/repository/org/tests/processes/jbpm-processeventlistener
+    networks:
+      - app-network
+    profiles:
+      - jbpm
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+    profiles:
+      - jbpm
+      - camunda
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  shared-volume:
+  postgres-data:

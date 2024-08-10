@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0010d221-4434-44b2-b988-1b1bd5e8598d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-engine/.idea/my-project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-engine/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/controller/CamundaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/controller/RabbitMQListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/controller/ZeebeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/domain/CamundaJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/domain/DeployDiagramJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/domain/StartProcessJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/service/ProcessEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/service/RabbitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/service/ZeebeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../camunda-integration/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../docker-build.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/.idea/frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/AnnotationEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/BPMNViewerComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/DownloadReport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/EmissionFactorEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/annotationEditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/emissionFactorEditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/emissionFactorsUpload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/errorLogWindow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/errorLogWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/fileUpload.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/fileUpload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/processManager.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/processManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/processTable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/processTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/copyScript.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/config/JbpmConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/controller/JBPMController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/controller/RabbitMQListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/domain/ContainerCreationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/domain/JbpmJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/domain/ProcessStartRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/domain/VariableChangePayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/service/DiagramService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/service/JBPMService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/java/com/thesis/jbpmintegration/service/RabbitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jbpm-integration/src/main/resources/process.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../main-app/docker-compose-camunda.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main-app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../main-app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main-app/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../main-app/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main-app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../main-app/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main-app/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../main-app/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main-app/src/main/java/com/thesis/mainapp/MainAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../camunda-integration/src/main/java/com/thesis/camundaintegration/CamundaIntegrationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main-app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../main-app/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main-app/src/test/java/com/thesis/mainapp/MainAppApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2jI7BgB5a9UcZ9Ryru31Gj39UkZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu-22.04/home/bogdan/thesis/Thesis/my-project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5944334&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="my-project" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.workflow.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0010d221-4434-44b2-b988-1b1bd5e8598d" name="Changes" comment="" />
+      <created>1721062603699</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721062603699</updated>
+      <workItem from="1721062833568" duration="193000" />
+      <workItem from="1721664553168" duration="2505000" />
+      <workItem from="1723295535413" duration="679000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

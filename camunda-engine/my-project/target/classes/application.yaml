@@ -1,0 +1,7 @@
+camunda.bpm.admin-user:
+  id: demo
+  password: demo
+#startUrl: http://localhost:5001/api/camunda/startExecutionListener
+startUrl: http://camunda-integration:5001/api/camunda/startExecutionListener
+#endUrl: http://localhost:5001/api/camunda/endExecutionListener
+endUrl: http://camunda-integration:5001/api/camunda/endExecutionListener

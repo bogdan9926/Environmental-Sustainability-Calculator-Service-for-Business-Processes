@@ -1,0 +1,213 @@
+/* FileUploadComponent.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #e0f7fa; /* Light blue background color */
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #e0f7fa; /* Light blue background color */
+}
+
+.file-upload-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upload-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #00796b; /* Teal background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+    background-color: #004d40; /* Darker teal */
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    max-width: 1000px; /* Increased modal width */
+    width: 90%; /* Ensure it scales well on different screen sizes */
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.file-input {
+    margin-bottom: 20px;
+}
+
+.submit-button, .close-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button {
+    background-color: #388e3c; /* Green background color */
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: #2e7d32; /* Darker green */
+}
+
+.close-button {
+    background-color: #d32f2f; /* Red background color */
+    color: white;
+}
+
+.close-button:hover {
+    background-color: #c62828; /* Darker red */
+}
+
+.process-selection, .instance-selection {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center; /* Center the buttons */
+}
+@media (min-width: 1024px) {
+    .flex-item {
+        width: 80%; /* Maintain layout for even larger screens */
+    }
+}
+.process-buttons button, .instance-selection button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    background-color: #00796b; /* Teal background color */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.process-buttons button:hover, .instance-selection button:hover {
+    background-color: #004d40; /* Darker teal */
+}
+
+.process-buttons button.active, .instance-selection button.active {
+    background-color: #004d40; /* Darker teal */
+}
+
+.process-table-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.process-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.process-table th, .process-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.process-table thead {
+    background-color: #00796b; /* Teal background color */
+    color: white;
+}
+
+.process-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.process-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.process-table tbody tr:last-of-type {
+    border-bottom: 2px solid #00796b; /* Teal border */
+}
+
+.process-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-button:hover {
+    background-color: #0056b3;
+}
+
+.info-modal-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.info-modal-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.info-modal-content li {
+    margin-bottom: 10px;
+}
+
+.info:hover .extra-info {
+    display: block;
+}
+
+.info {
+    font-size: 20px;
+    padding-left: 5px;
+    width: 20px;
+    border-radius: 15px;
+}

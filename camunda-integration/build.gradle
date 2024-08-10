@@ -1,0 +1,53 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.3'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'maven-publish'
+}
+group = 'com.thesis'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+//	mavenLocal()
+}
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework:spring-webflux:6.1.4'
+	implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+//	implementation 'io.github.resilience4j:resilience4j-spring-boot2:2.1.0'
+	implementation 'io.camunda.spring:spring-boot-starter-camunda:8.3.4'
+	implementation 'io.camunda:zeebe-client-java:8.3.4'
+	implementation 'io.camunda:zeebe-exporter-api:8.5.1'
+
+	implementation 'org.activiti:activiti-spring-boot-starter:7.1.0.M6'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp:3.2.4'
+	implementation 'org.json:json:20240303'
+
+
+
+}
+
+//sourceSets {
+//	main {
+//		resources {
+//			srcDir 'src/main/resources'
+//			include '**/*.drl', '**/*.bpmn', '**/*.bpmn2'
+//		}
+//	}
+//}
+//
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
+tasks.named('bootJar') {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

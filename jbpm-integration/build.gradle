@@ -1,0 +1,55 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+configurations {
+	all*.exclude group: 'xml-apis'
+	all*.exclude group: 'xerces'
+}
+group = 'com.thesis'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	maven {
+		url 'https://repository.jboss.org/nexus/content/groups/public/'
+	}
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.kie.server:kie-server-client:7.74.1.Final'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'javax.jms:javax.jms-api:2.0.1'
+	implementation 'javax.jms:jms-api:1.1-rev-1'
+	implementation 'javax.xml.bind:jaxb-api:2.3.1'
+	implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+	implementation 'javax.activation:activation:1.1.1'
+	implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.0.0'
+	implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
+	runtimeOnly 'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp:3.2.4'
+	implementation 'org.kie.remote:kie-services-client:6.1.0-SNAPSHOT'
+//	implementation 'org.drools:drools-core:6.1.0.Final'
+
+
+
+
+
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+tasks.named('bootJar') {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

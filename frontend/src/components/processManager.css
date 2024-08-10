@@ -1,0 +1,68 @@
+/* ProcessManager.css */
+.process-manager {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.process-selection {
+    margin-top: 20px;
+}
+
+.process-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.diagram-container{
+    pointer-events: none;
+}
+.upload-edit-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust gap between rows as needed */
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Adjust gap between components in a row as needed */
+    justify-content: center;
+}
+
+.instance-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    background-color: #009879;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #007a63;
+}
+
+button.active {
+    background-color: #005f49;
+}
+
+h2, h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.no-processes, .no-instances {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 20px;
+}

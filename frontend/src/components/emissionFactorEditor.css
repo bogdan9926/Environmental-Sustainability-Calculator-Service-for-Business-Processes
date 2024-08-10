@@ -1,0 +1,30 @@
+/* src/components/annotationEditor.css */
+
+
+.edit-annotations-btn {
+    margin-top: 10px;
+}
+
+.annotation-editor-modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.tabs button {
+    margin-right: 5px;
+}
+
+.tabs button.active {
+    font-weight: bold;
+}
+
