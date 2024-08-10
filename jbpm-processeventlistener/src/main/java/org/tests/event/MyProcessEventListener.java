@@ -86,11 +86,13 @@ public class MyProcessEventListener extends DefaultProcessEventListener {
         String processXml = XmlBPMNProcessDumper.INSTANCE.dump((org.jbpm.workflow.core.WorkflowProcess) process2);
         processXml = processXml.replace("\"", "\\\"");
         processXml = processXml.replace("\n", "\\n");
+        LocalDateTime time = LocalDateTime.now();
+
 
         System.out.println(processXml);
 
         try {
-            String payload = String.format("{\"processName\": \"%s\", \"processKey\": \"%s\", \"status\": \"%s\",\"diagramXML\": \"%s\",\"platform\": \"jbpm\"}", process, processId, status,processXml);
+            String payload = String.format("{\"processName\": \"%s\", \"processKey\": \"%s\", \"status\": \"%s\",\"diagramXML\": \"%s\",\"startTime\": \"%s\",\"platform\": \"jbpm\"}", process, processId, status,processXml, time);
             sendPostRequest(processNotificationEndpoint, payload);
         } catch (Exception e) {
             e.printStackTrace();
@@ -105,13 +107,15 @@ public class MyProcessEventListener extends DefaultProcessEventListener {
         String process = event.getProcessInstance().getProcessId();
         Long processId = event.getProcessInstance().getId();
         Integer status = event.getProcessInstance().getState();
+        LocalDateTime time = LocalDateTime.now();
+
         System.out.println("afterProcessCompleted");
 //        System.out.println(event.getProcessInstance().getProcessId());
 //        System.out.println(event.getProcessInstance().getId());
 //        System.out.println(event.getProcessInstance().getState());
 
         try {
-            String payload = String.format("{\"processName\": \"%s\", \"processKey\": \"%s\", \"status\": \"%s\",\"platform\": \"jbpm\"}", process, processId, status);
+            String payload = String.format("{\"processName\": \"%s\", \"processKey\": \"%s\", \"status\": \"%s\",\"endTime\": \"%s\",\"platform\": \"jbpm\"}", process, processId, status, time);
             sendPostRequest(processNotificationEndpoint, payload);
         } catch (Exception e) {
             e.printStackTrace();
