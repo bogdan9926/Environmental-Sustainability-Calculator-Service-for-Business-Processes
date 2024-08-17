@@ -41,6 +41,22 @@ The project is part of a thesis that explores the integration of sustainability 
  - Enhanced Use Cases: Enable process execution from the dashboard for testing configurations and real-time process flow manipulation based on emission levels. 
  - Extended Emission Types: Include other greenhouse gas (GHG) emissions, such as methane and nitrous oxide, in the sustainability calculations.
 
+#### Camunda 8
+Camunda 7 was chosen for this project because the event driven microservice architecture of Camunda 8 posed issues for setting up the event listeners. In the future, Camunda 8 can be integrated by setting up the Camunda Exporter (that replaced the event listeners), or by using the zeebee worker environment to replicate the event listener inside the task execution step. For the latter step, the functionality is already implemented, but it is not in use, as the scope of the project was to implement a decoupled monitoring tool and modifications inside the task execution process were not wanted.
+
+In the camunda-integration module the functionality for using the zeebee engine is commented but it can be easily used by running a camunda 8 process instance from the camunda modeler and using the docker-compose-camunda.yaml file inside the docker build script.
+#### Dashboard process execution
+In order to Enable process execution from the dashboard for testing configurations, the process forms and diagram need to be imported to the engine integration module, and the module needs to be connected to the engine to be able to use method calls or HTTP requests to deploy the files and execute processes. Most of this functionality is already implemented and part of the code-base, but it is not in function. It involves file transfers by a shared docker volume for Camunda, and runtime deployed updated KJar for JBPM. 
+
+The functionality is inside the main application and the engine integration modules, the latter being built with this specific scope in mind. At the moment their only functionality is channel communication, and they could have been replaced by just communication between the engine and main application module. 
+### Project components
+
+- Business Process Management (BPM) Engines: This component is a running BPMN execution engine that is used for executing the business processes that need to be verified. As the system is compatible with multiple BPM engines, a corresponding integration will be used for communication between the BPM engine and the other modules. The engine itself utilizes event listeners to notify the system of process events such as process start, process end, activity start, and activity end
+- Integration Modules: For each BPM engine, there is a dedicated integration module that acts as an intermediary between the main application and the BPM engines. These modules facilitate seamless communication and data exchange.
+- Main Application: This component contains the core business logic of the system. It performs the majority of computational tasks, including emission calculations, and handles data management by using a database to persist data. Additionally, it ensures real-time communication with the front end, enabling users to accurately visualize carbon emissions.
+- Front End: The front end manages the user dashboard, serving as the interface for system users. It allows users to upload fuel annotations files and fuel emission values, and provides a real-time view of the carbon emissions data.
+- Database: The database is used by the main application to store and manage all relevant data, including process information and emissions calculations.
+
 ### Setup
  - Clone the project
  - Open the project in your chosen IDE compatible with Spring
@@ -66,3 +82,8 @@ The project is part of a thesis that explores the integration of sustainability 
  ![Frontend with emissions](images/ss-frontend-full.png)
  - You can download the report using the download report button
  ![PDF report](images/ss-report.png)
+
+### Running the project locally
+
+In order to run the project locally, you can replace the endpoint urls to localhost inside the application.properties files in each component. Take note that this only works with camunda, as jbpm server is still ran as a container and cannot point to your localhost. Make sure to replace rabbitmq as well as the postgres db.
+
